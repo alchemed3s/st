@@ -17,5 +17,9 @@ jobs:
       run: |
         sudo apt update
         sudo apt install -y build-essential libx11-dev libxft-dev libxext-dev
+    - name: clean
+      run: make clean
     - name: make
       run: make
+    - name: make install
+      run: make DESTDIR=$PWD/target install
